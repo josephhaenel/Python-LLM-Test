@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #2E3436;
+    --secondary-color: #6797a3;
+    --button-non-hover-color: hsl(193, 32%, 63%);
+    --button-hover-color: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#chat-container {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: linear-gradient(260deg,#3D9CB6,#467C8B,#27B9E1,#415A61,#2E3436);
+    background-size: 300% 300%;
+    animation: gradient-animation 35s ease infinite;
+    color: var(--button-hover-color);
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#reset-btn, #settings-btn {
+    background: none;
+    border: none;
+    color: var(--button-hover-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#reset-btn:hover, #settings-btn:hover {
+    color: var(--button-non-hover-color);
+}
+
+#chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+}
+
+#chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.user {
+    background-color: #26B8E0;
+    align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
+}
+
+.bot {
+    background-color: #26E0A2;
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+}
+
+.message-icon {
+    margin-right: 10px;
+}
+
+#input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #cbf3f0;
+    background-color: #fff;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cbf3f0;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+#send-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--button-non-hover-color);
+    color: #cbf3f0;
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+}
+
+#send-btn:hover {
+    background-color: #467C8B;
+}
